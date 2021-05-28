@@ -9,9 +9,7 @@ function solve(arr){
         return acc;
     }, []);
 
-    result.forEach(element => {
-        console.log(element);
-    });
+    return result;
 }
 
 solve([1, 
