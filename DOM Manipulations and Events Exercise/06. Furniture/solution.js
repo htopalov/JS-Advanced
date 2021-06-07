@@ -20,7 +20,9 @@ function solve() {
                   row.appendChild(cell);
 
               } else {
-                  cell.textContent = obj[key];
+                  let p = document.createElement('p');
+                  p.textContent = obj[key];
+                  cell.appendChild(p);
                   row.appendChild(cell);
               }
               
@@ -37,6 +39,7 @@ function solve() {
       let totalFactor = 0;
       let names = [];
       let rows = Array.from(document.getElementsByTagName('tr')).filter(e => e.children[4].checked == true);
+      console.log(rows);
       for (const row of rows) {
           names.push(row.children[1].textContent);
           totalPrice += Number(row.children[2].textContent);
