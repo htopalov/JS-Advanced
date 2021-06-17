@@ -82,6 +82,20 @@ describe('Tests for StringBuilder class', function () {
             globalInstance.prepend(213);
         },Error);
     });
+    it('check if inserts chars at correct index when passed valid string', function(){
+        let input = ' fast';
+        let input2 = ' are';
+        let expected = 'cars fast';
+        let expected2 = 'cars are fast';
+        let expected3 = 'cars are fat';
+        globalInstance = new StringBuilder('cars');
+        globalInstance.insertAt(input,4);
+        expect(globalInstance.toString()).to.equal(expected);
+        globalInstance.insertAt(input2,4);
+        expect(globalInstance.toString()).to.equal(expected2);
+        globalInstance.remove(11,1);
+        expect(globalInstance.toString()).to.equal(expected3);
+    });
     it('check if prepend works',function(){
         globalInstance = new StringBuilder('str');
         globalInstance.prepend('hel');
